@@ -29,8 +29,9 @@ namespace EmpTimeSheet
         {
             services.AddControllers();
             services.AddDbContext<LawInOrderDBContext>(item=>item.UseSqlServer(Configuration.GetConnectionString("EmpTimeSheetDBConnection")));
-            services.AddCors(options=>options.AddDefaultPolicy(builder=>{
-                builder.WithOrigins("http://localhost:4200");
+            services.AddCors(options => options.AddDefaultPolicy(builder =>
+            {
+                builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
             }));
         }
 
