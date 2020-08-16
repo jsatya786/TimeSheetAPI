@@ -28,6 +28,14 @@ namespace EmpTimeSheet.Controllers
             _context = context;
         }
         [Microsoft.AspNetCore.Mvc.HttpGet]
+        [Microsoft.AspNetCore.Mvc.Route("WelcomeToAPI")]
+        public ActionResult<string> WelcomeSceern()
+        {
+            string st = string.Empty;
+            st = "Welomce to Law in order API application.";
+            return st;
+        }
+        [Microsoft.AspNetCore.Mvc.HttpGet]
         [Microsoft.AspNetCore.Mvc.Route("getPersonsList")]
         public ActionResult<List<Persons>> GetPersonsList()
         {
